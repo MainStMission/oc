@@ -1,11 +1,10 @@
-# Rails 4 Sample App on OpenShift #
 
 [Main St Mission's](http://www.mainstmission.org/) Open Cupboard
 
-[![Build Status](https://secure.travis-ci.org/MainStMission/food-pantry-manager.png?branch=master)](http://travis-ci.org/MainStMission/food-pantry-manager) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/MainStMission/food-pantry-manager
+[![Build Status](https://secure.travis-ci.org/MainStMission/food-pantry-manager.png?branch=master)](http://travis-ci.org/MainStMission/food-pantry-manager) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/MainStMission/oc)
 ## Who Are We?
 
-![Main Street Mission](http://msm2.webvanta.com/msmcolor.png)
+![Main Street Mission](http://www.mainstmission.org)
 
 Main Street Mission is food pantry in China Grove, North Carolina, USA. The mission provides food and other donated items to
 members of the community in need. This project aims to create an inventory and volunteer tracking system for use in food pantries and
@@ -36,8 +35,6 @@ We have a [google group mailing list](https://groups.google.com/forum/?fromgroup
 Feel free to ask us questions there, or report a problem with an issue here on github. If you have a problem with anything not code related,
 then send us a message on the mailing list and we'll do the best we can to help you out.
 
-This App is designed for Openshift
+This App is designed for [Openshift](http://openshift.github.io/documentation/oo_cartridge_guide.html#ruby)
 
-The OpenShift `ruby` cartridge documentation can be found at:
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#ruby
