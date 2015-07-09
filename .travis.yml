@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.0.0
+before_script:
+  - rake travis:setup
+notifications:
+  webhooks:
+    urls:
+    on_success: always
+    on_failure: never
