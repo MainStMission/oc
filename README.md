@@ -1,149 +1,43 @@
 # Rails 4 Sample App on OpenShift #
-Quickstart rails 4 application for openshift.
 
-The easiest way to install this application is to use the [OpenShift
-Instant Application][template]. If you'd like to install it
-manually, follow [these directions](#manual-installation).
+[Main St Mission's](http://www.mainstmission.org/) Open Cupboard
 
-## OpenShift Considerations ##
-These are some special considerations you may need to keep in mind when
-running your application on OpenShift.
+[![Build Status](https://secure.travis-ci.org/MainStMission/food-pantry-manager.png?branch=master)](http://travis-ci.org/MainStMission/food-pantry-manager) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/MainStMission/food-pantry-manager
+## Who Are We?
 
-### Database ###
-Your application is configured to use your OpenShift database in
-Production mode.
-Because it addresses these databases based on [OpenShift Environment
-Variables](http://red.ht/NvNoXC), you will need to change these if you
-want to use your application in Production mode outside of
-OpenShift.
+![Main Street Mission](http://msm2.webvanta.com/msmcolor.png)
 
-By default the development and test environment is configured to use
-the sqlite3 database adapter.
+Main Street Mission is food pantry in China Grove, North Carolina, USA. The mission provides food and other donated items to
+members of the community in need. This project aims to create an inventory and volunteer tracking system for use in food pantries and
+food banks. There are not any good options for software for the small non-profits that run these pantries. This project will create a
+software system tailored to the needs of Main Street Mission and other food pantries.
 
-You can also speed up the `git push` process by excluding gems you don't need,
-based on the database you use in OpenShift. You can use the `BUNDLE_WITHOUT`
-environment variable for that:
+You can read a bit more about the mission and this project in Tom's
+[History of Main St. Mission's Food Pantry Manager](https://github.com/MainStMission/food-pantry-manager/blob/master/HISTORY.md).
 
-```
-$ rhc env set BUNDLE_WITHOUT="development test postgresql"
-```
+## Why Should You Help?
 
-Use the command above if you don't want to install any development gems and you
-are using OpenShift MySQL cartridge.
+The mission provides food for about 250 families each month. About 200 children are given school supplies each August. The mission also
+provides meals for families on holidays. This is only one food pantry in the US. In [2011 6.1 million households (5.1%)](http://feedingamerica.org/hunger-in-america/hunger-facts/hunger-and-poverty-statistics.aspx)
+accessed emergency food at a pantry in the US. Contributing to this project gives you an opportunity to help this organization and the people
+it serves. Are you trying to learn Ruby on Rails? Great, we would love to help you learn and it gives you an excellent example to add to
+your resume/cv while contributing to a project that helps people.
 
-### Assets ###
-Your application is set to precompile the assets every time you push
-to OpenShift. Any assets you commit to your repo will be preserved
-alongside those which are generated during the build.
-
-By adding `disable_asset_compilation` marker, you will disable asset compilation upon application deployment.
-
-### Security ###
-Since these quickstarts are shared code, we had to take special
-consideration to ensure that security related configuration variables
-was unique across applications.
-To accomplish this, we modified some of the configuration files (shown
-in the table below).
-Now instead of using the same default values, your application will
-generate it's own value using the `initialize_secret` function from `lib/openshift_secret_generator.rb`.
-
-This function uses a secure environment variable that only exists on
-your deployed application and not in your code anywhere.
-You can then use the function to generate any variables you need.
-Each of them will be unique so `initialize_secret(:a)` will differ
-from `initialize_secret(:b)` but they will also be consistent, so any
-time your application uses them (even across reboots), you know they
-will be the same.
-
-TLDR: You should copy/link the `.openshift/lib/openshift_secret_generator.rb`
-file into `./lib` folder and link the `secret_token.rb` and `session_store.rb`
-files into `./config/initializers` folder. Look at this quickstart for an
-example.
-
-### Development mode ###
-When you develop your Rails application in OpenShift, you can also enable the
-'development' environment by setting the `RAILS_ENV` environment variable,
-using the `rhc` client, like:
-
-```
-$ rhc env set RAILS_ENV=development
-```
-
-If you do so, OpenShift will run your application under 'development' mode.
-In development mode, your application will:
-
-* Show more detailed errors in browser
-* Skip static assets (re)compilation
-* Skip web server restart, as the code is reloaded automatically
-* Skip `bundle` command if the Gemfile is not modified
-
-Development environment can help you debug problems in your application
-in the same way as you do when developing on your local machine.
-However, we strong advise you to not run your application in this mode
-in production.
-
-##### Modified Files #####
-
-<table>
-  <tr>
-    <th>File</th>
-    <th>Variable</th>
-  </tr>
-  <tr>
-    <td>config/initializers/secret_token.rb</td> 
-    <td>Railsapp::Application.config.secret_token</td>
-  </tr>
-  <tr>
-    <td>config/initializers/session_store.rb</td>
-    <td>Railsapp::Application.config.session_store</td>
-  </tr>
-</table>
-
-## Manual Installation ##
-
-1. Create an account at https://www.openshift.com
-
-1. Create a rails application
-
-    ```
-    rhc app create railsapp ruby-2.0
-    ```
-
-   **Note:** This quickstart will not work with Ruby 1.8
+## Contributing
 
 
-1. Add database support to your application
+See the [Contribution Guidelines](https://github.com/MainStMission/food-pantry-manager/blob/master/CONTRIBUTING.md).
 
-    ```
-    rhc cartridge add -a railsapp -c mysql-5.5
-    ```
+## Talk to us
 
-    or
+[![Pair program with me!](http://pairprogramwith.me/badge.png)](mailto:tom.brooke@gmail.com?subject=Pairing on LocalSupport)
 
-    ```
-    rhc cartridge add -a railsapp -c postgresql-9.2
-    ```
+We have a [google group mailing list](https://groups.google.com/forum/?fromgroups#!forum/main-street-mission-development).
+Feel free to ask us questions there, or report a problem with an issue here on github. If you have a problem with anything not code related,
+then send us a message on the mailing list and we'll do the best we can to help you out.
 
-1. Add this upstream Rails quickstart repository
+This App is designed for Openshift
 
-    ```
-    cd railsapp
-    git remote add upstream -m master git://github.com/openshift/rails4-example.git
-    git pull -s recursive -X theirs upstream master
-    ```
+The OpenShift `ruby` cartridge documentation can be found at:
 
-1. Push your new code
-
-    ```
-    git push
-    ```
-
-1. That's it! Enjoy your new Rails application!
-
-
-[template]: https://openshift.redhat.com/app/console/application_types
-
-License
--------
-
-This code is dedicated to the public domain to the maximum extent permitted by applicable law, pursuant to CC0 (http://creativecommons.org/publicdomain/zero/1.0/)
+http://openshift.github.io/documentation/oo_cartridge_guide.html#ruby
