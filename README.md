@@ -1,5 +1,5 @@
 
-[Main St Mission's](http://www.mainstmission.org/) Open Cupboard
+# [Main St Mission's](http://www.mainstmission.org/) Open Cupboard
 
 [![Build Status](https://travis-ci.org/MainStMission/oc.svg?branch=master)](https://travis-ci.org/MainStMission/oc)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/MainStMission/oc)

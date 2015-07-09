@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
 notifications:
-  webhooks:
+  webhooks: 
     urls:
     on_success: always
     on_failure: never
