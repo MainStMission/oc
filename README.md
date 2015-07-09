@@ -4,7 +4,7 @@
 [![Build Status](https://secure.travis-ci.org/MainStMission/food-pantry-manager.png?branch=master)](http://travis-ci.org/MainStMission/food-pantry-manager) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/MainStMission/oc)
 ## Who Are We?
 
-![Main Street Mission](http://www.mainstmission.org)
+![Main Street Mission](/app/assets/images/msmcolor.png)
 
 Main Street Mission is food pantry in China Grove, North Carolina, USA. The mission provides food and other donated items to
 members of the community in need. This project aims to create an inventory and volunteer tracking system for use in food pantries and
