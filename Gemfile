@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.3'
 
 ### OpenShift Online changes:
 
 # Fix the conflict with the system 'rake':
 gem 'rake', '~> 10.2.2'
+gem 'pg'
+
 
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql
@@ -18,13 +20,13 @@ gem 'rake', '~> 10.2.2'
 #
 group :development, :test do
   gem 'rspec-rails', '~> 3.3.0'
-  gem 'sqlite3'
   gem 'minitest'
   gem 'thor'
+  gem 'web-console', '~> 2.0'
 end
 
 group :production, :postgresql do
-  gem 'pg'
+
 end
 
 ### / OpenShift changes
