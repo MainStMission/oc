@@ -8,7 +8,7 @@ gem 'rails', '4.2.3'
 gem 'rake', '~> 10.2.2'
 gem 'pg'
 
-
+gem 'paper_trail', '~> 4.0.0.rc'
 
 # Assets
 
@@ -16,17 +16,9 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'haml-rails'
 gem 'decent_exposure'
