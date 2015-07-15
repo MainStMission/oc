@@ -1,14 +1,12 @@
 # -*- encoding : utf-8 -*-
 class NeighborsController < ApplicationController
 
-  include RestfulJson::DefaultController
-
 
   before_filter :authenticate_user!
   expose(:household)
   expose(:households)
   expose(:neighbor)
-  expose(:neighbors) { Neighbor.scoped.page params[:page] }
+  expose(:neighbors) # { Neighbor.scoped.page params[:page] }
 
   def create
     if neighbor.save

@@ -10,6 +10,7 @@ gem 'pg'
 
 gem 'paper_trail', '~> 4.0.0.rc'
 gem 'kaminari'
+gem 'attr_encrypted'
 
 # Assets
 
