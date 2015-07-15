@@ -9,6 +9,7 @@ gem 'rake', '~> 10.2.2'
 gem 'pg'
 
 gem 'paper_trail', '~> 4.0.0.rc'
+gem 'kaminari'
 
 # Assets
 
