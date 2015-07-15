@@ -28,6 +28,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'haml-rails'
+gem 'decent_exposure'
 
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql

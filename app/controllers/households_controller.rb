@@ -69,6 +69,13 @@ class HouseholdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def household_params
-      params[:household]
+      params[:household].permit(:household_name, :name, :created_at, :updated_at, :box_type, :income1, :inc_amt1,
+                                :income2, :inc_amt2, :income3, :inc_amt3, :expense1, :exp_amt1, :expense2, :exp_amt2,
+                                :expense3, :exp_amt3, :option1, :opt_val1, :option2, :opt_val2, :notes, :street, :apt,
+                                :state, :city, :zip, :food_alert, :prayer_request, :money_notes, :special_needs, 
+                                :how_heard, :proof_of_residency_type, :date_of_proof, :post_prayer, :post_needs,
+                                :christmas, :bool1, :bool_val1, :bool2, :bool_val2, :bool3, :bool_val3, :bool4,
+                                :bool_val4, :bool5, :bool_val5, :income4, :inc_amt4, :exp_amt4, :expense4, :s_numb,
+                                :s_box)
     end
 end

@@ -14,6 +14,10 @@ software system tailored to the needs of Main Street Mission and other food pant
 You can read a bit more about the mission and this project in Tom's
 [History of Main St. Mission's Food Pantry Manager](https://github.com/MainStMission/food-pantry-manager/blob/master/HISTORY.md).
 
+## Open Cupboard Project
+
+The Original Food Pantry application was developed in Ruby and Rails and has been in daily use at Main Street Mission for about One and One half years. We have been very happy with it and want to make it available on an open source basis to other food pantries. Also please feel free to contact if you would like assistance in either deploying the project or in having it custom tailored to your needs.
+
 ## Why Should You Help?
 
 The mission provides food for about 250 families each month. About 200 children are given school supplies each August. The mission also
