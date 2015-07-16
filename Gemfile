@@ -36,6 +36,8 @@ gem 'decent_exposure'
 #
 group :development, :test do
   gem 'rspec-rails', '~> 3.3.0'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
   gem 'minitest'
   gem 'thor'
   gem 'web-console', '~> 2.0'
