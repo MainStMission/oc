@@ -11,6 +11,7 @@ gem 'pg'
 gem 'paper_trail', '~> 4.0.0.rc'
 gem 'kaminari'
 gem 'attr_encrypted'
+gem 'rails_admin', :git => 'https://github.com/sferik/rails_admin.git'
 
 # Assets
 
