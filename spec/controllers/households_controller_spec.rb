@@ -24,8 +24,6 @@ RSpec.describe HouseholdsController, type: :controller do
   # Household. As you add validations to Household, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {household_name: 'Brooke' }
-
   }
 
 
@@ -40,7 +38,6 @@ RSpec.describe HouseholdsController, type: :controller do
 
   describe "GET #index" do
     it "assigns all households as @households" do
-      household = Household.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:households)).to eq([household])
     end
@@ -48,9 +45,10 @@ RSpec.describe HouseholdsController, type: :controller do
 
   describe "GET #show" do
     it "assigns the requested household as @household" do
-      household = Household.create! valid_attributes
+    neighbor = create(:neighbor)
+    household = create(:household, neighbors: [neighbor])
       get :show, {:id => household.to_param}, valid_session
-      expect(assigns(:household)).to eq(household)
+      expect(assigns(household)).to eq(household)
     end
   end
 

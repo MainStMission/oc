@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :household do
+
+  factory :household, class:  "Household" do
     household_name "Brooke"
   end
 end

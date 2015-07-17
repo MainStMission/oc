@@ -1,6 +1,7 @@
 FactoryGirl.define do
-  factory :neighbor do
-    
-  end
 
+  factory :neighbor, class: "Neighbor" do
+    first_name "Tom"
+    last_name "Brooke"
+  end 
 end

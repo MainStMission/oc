@@ -25,6 +25,11 @@ gem 'turbolinks'
 gem 'haml-rails'
 gem 'decent_exposure'
 
+
+# Core Gems
+#
+gem 'devise'
+
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql
 # for production.
