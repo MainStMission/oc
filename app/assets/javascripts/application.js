@@ -32,4 +32,4 @@ $(function() {
 
 $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
 
-
+$('.dropdown-toggle').dropdown()
