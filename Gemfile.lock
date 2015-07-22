@@ -119,6 +119,8 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     formatador (0.2.5)
     formulaic (0.3.0)
       activesupport
@@ -348,6 +350,7 @@ DEPENDENCIES
   decent_exposure
   devise
   factory_girl_rails
+  font-awesome-sass (~> 4.3.0)
   formulaic
   guard-rspec
   haml-rails

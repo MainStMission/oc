@@ -22,6 +22,7 @@ gem "title"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 4.3.0'
 gem 'turbolinks'
 gem 'haml-rails'
 gem 'decent_exposure'
