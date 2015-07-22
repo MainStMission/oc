@@ -1,10 +1,13 @@
 # -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
-  expose(:user)
+
+  expose(:user, attributes: :user_params)
+
   expose(:users)
   before_filter :authenticate_user!
 
   def create
+    user = User.new(user_params)
     if user.save
       redirect_to users_path, :notice => "User successfully created"
     else
@@ -33,6 +36,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(*allowable)
+    params.require(:user).permit(allowable)
   end
 end

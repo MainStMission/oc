@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   include ActiveModel::ForbiddenAttributesProtection
 
-  # attr_accessible :username,:first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :admin, :login
+   # attr_accessible :username,:first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :admin, :login
 
-  # attr_accessor :login
+   attr_accessor :login
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :trackable, :validatable, :authentication_keys => [:login]

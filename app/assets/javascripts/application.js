@@ -15,11 +15,11 @@
  //= require jquery_ujs
  //= turbolinks
  //= require cocoon
+ //= require bootstrap-sprockets
  //= require jquery-ui
  //= require header
  //= require rails.validations
  //= require rails.validations.simple_form
- //= require jquery.timeago
  //= require household
  //= require components
  //= require_tree .

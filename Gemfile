@@ -25,6 +25,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml-rails'
 gem 'decent_exposure'
+gem 'cocoon'
+gem 'ransack'
 
 
 # Core Gems
