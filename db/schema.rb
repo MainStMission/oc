@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801204129) do
+ActiveRecord::Schema.define(version: 20150801204633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,13 @@ ActiveRecord::Schema.define(version: 20150801204129) do
   end
 
   add_index "households", ["household_name"], name: "index_households_on_household_name", unique: true, using: :btree
+
+  create_table "missions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "neighbors", force: :cascade do |t|
     t.string   "first_name"
