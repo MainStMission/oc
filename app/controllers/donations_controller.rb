@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 class DonationsController < ApplicationController
 
-  include RestfulJson::DefaultController
 
   #before_filter :authenticate_user!
   expose(:donation)

@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719185049) do
+ActiveRecord::Schema.define(version: 20150801203125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donations", force: :cascade do |t|
+    t.integer  "donor_id"
+    t.decimal  "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "donors", force: :cascade do |t|
+    t.string   "first_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "last_name"
+    t.integer  "tools_id"
+  end
 
   create_table "households", force: :cascade do |t|
     t.string   "household_name"
@@ -136,12 +151,13 @@ ActiveRecord::Schema.define(version: 20150719185049) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "versions", force: :cascade do |t|
-    t.string   "item_type",  null: false
-    t.integer  "item_id",    null: false
-    t.string   "event",      null: false
+    t.string   "item_type",      null: false
+    t.integer  "item_id",        null: false
+    t.string   "event",          null: false
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
+    t.text     "object_changes"
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
@@ -163,5 +179,27 @@ ActiveRecord::Schema.define(version: 20150719185049) do
 
   add_index "visits", ["household_id"], name: "index_visits_on_household_id", using: :btree
   add_index "visits", ["visited_on"], name: "index_visits_on_visited_on", using: :btree
+
+  create_table "volunteers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "group"
+    t.string   "cell_phone"
+    t.datetime "birthday"
+    t.string   "nick_name"
+    t.string   "skills"
+    t.string   "contact"
+    t.string   "notes"
+    t.boolean  "admin"
+  end
 
 end

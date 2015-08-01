@@ -12,7 +12,7 @@ $navbarHeight: 80px;
 $navbarText: #eee;
 $navbarLinkColor: #eee;
 $navbarText: #3C566D;
-$navbarFontSize: 1.25em;
+$navbarFontSize: 1.55em;
 $navbarHover: #faa630;
 $navbarBrandColor: $navbarText;
 $navbarLinkColor: $navbarText;
@@ -185,6 +185,10 @@ footer{
 
 .nav-tabs {
   font-size: 20px;
+}
+
+.nav {
+  fonat-size: $navbarFontSize;
 }
 
 .add_neighbor {
