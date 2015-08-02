@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801204633) do
+ActiveRecord::Schema.define(version: 20150801210747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,17 @@ ActiveRecord::Schema.define(version: 20150801204633) do
 
   add_index "neighbors", ["household_id"], name: "index_neighbors_on_household_id", unique: true, using: :btree
   add_index "neighbors", ["last_name"], name: "index_neighbors_name", unique: true, using: :btree
+
+  create_table "rails_admin_histories", force: :cascade do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      limit: 2
+    t.integer  "year",       limit: 8
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "time_cards", force: :cascade do |t|
     t.integer  "volunteer_id"
