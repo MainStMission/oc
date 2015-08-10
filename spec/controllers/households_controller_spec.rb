@@ -24,6 +24,9 @@ RSpec.describe HouseholdsController, type: :controller do
   # Household. As you add validations to Household, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
+    {household_name: "Brooke, Thomas"}
+    {neighbor_id: 12}
+
   }
 
 
@@ -36,9 +39,11 @@ RSpec.describe HouseholdsController, type: :controller do
   # HouseholdsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  login_user
+
   describe "GET #index" do
     it "assigns all households as @households" do
-      get :index, {}, valid_session
+      get :index, {}
       expect(assigns(:households)).to eq([household])
     end
   end
@@ -47,14 +52,14 @@ RSpec.describe HouseholdsController, type: :controller do
     it "assigns the requested household as @household" do
     neighbor = create(:neighbor)
     household = create(:household, neighbors: [neighbor])
-      get :show, {:id => household.to_param}, valid_session
+      get :show, {:id => household.to_param}
       expect(assigns(household)).to eq(household)
     end
   end
 
   describe "GET #new" do
     it "assigns a new household as @household" do
-      get :new, {}, valid_session
+      get :new, {}
       expect(assigns(:household)).to be_a_new(Household)
     end
   end
@@ -62,7 +67,7 @@ RSpec.describe HouseholdsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested household as @household" do
       household = Household.create! valid_attributes
-      get :edit, {:id => household.to_param}, valid_session
+      get :edit, {:id => household.to_param}
       expect(assigns(:household)).to eq(household)
     end
   end
@@ -71,30 +76,30 @@ RSpec.describe HouseholdsController, type: :controller do
     context "with valid params" do
       it "creates a new Household" do
         expect {
-          post :create, {:household => valid_attributes}, valid_session
+          post :create, {:household => valid_attributes}
         }.to change(Household, :count).by(1)
       end
 
       it "assigns a newly created household as @household" do
-        post :create, {:household => valid_attributes}, valid_session
+        post :create, {:household => valid_attributes}
         expect(assigns(:household)).to be_a(Household)
         expect(assigns(:household)).to be_persisted
       end
 
       it "redirects to the created household" do
-        post :create, {:household => valid_attributes}, valid_session
+        post :create, {:household => valid_attributes}
         expect(response).to redirect_to(Household.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved household as @household" do
-        post :create, {:household => invalid_attributes}, valid_session
+        post :create, {:household => invalid_attributes}
         expect(assigns(:household)).to be_a_new(Household)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:household => invalid_attributes}, valid_session
+        post :create, {:household => invalid_attributes}
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +113,20 @@ RSpec.describe HouseholdsController, type: :controller do
 
       it "updates the requested household" do
         household = Household.create! valid_attributes
-        put :update, {:id => household.to_param, :household => new_attributes}, valid_session
+        put :update, {:id => household.to_param, :household => new_attributes}
         household.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested household as @household" do
         household = Household.create! valid_attributes
-        put :update, {:id => household.to_param, :household => valid_attributes}, valid_session
+        put :update, {:id => household.to_param, :household => valid_attributes}
         expect(assigns(:household)).to eq(household)
       end
 
       it "redirects to the household" do
         household = Household.create! valid_attributes
-        put :update, {:id => household.to_param, :household => valid_attributes}, valid_session
+        put :update, {:id => household.to_param, :household => valid_attributes}
         expect(response).to redirect_to(household)
       end
     end
@@ -129,13 +134,13 @@ RSpec.describe HouseholdsController, type: :controller do
     context "with invalid params" do
       it "assigns the household as @household" do
         household = Household.create! valid_attributes
-        put :update, {:id => household.to_param, :household => invalid_attributes}, valid_session
+        put :update, {:id => household.to_param, :household => invalid_attributes}
         expect(assigns(:household)).to eq(household)
       end
 
       it "re-renders the 'edit' template" do
         household = Household.create! valid_attributes
-        put :update, {:id => household.to_param, :household => invalid_attributes}, valid_session
+        put :update, {:id => household.to_param, :household => invalid_attributes}
         expect(response).to render_template("edit")
       end
     end
@@ -145,13 +150,13 @@ RSpec.describe HouseholdsController, type: :controller do
     it "destroys the requested household" do
       household = Household.create! valid_attributes
       expect {
-        delete :destroy, {:id => household.to_param}, valid_session
+        delete :destroy, {:id => household.to_param}
       }.to change(Household, :count).by(-1)
     end
 
     it "redirects to the households list" do
       household = Household.create! valid_attributes
-      delete :destroy, {:id => household.to_param}, valid_session
+      delete :destroy, {:id => household.to_params}
       expect(response).to redirect_to(households_url)
     end
   end

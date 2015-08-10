@@ -1,3 +1,3 @@
 class Mission < ActiveRecord::Base
-  attr_accessible :message, :title
+  include ActiveModel::ForbiddenAttributesProtection
 end

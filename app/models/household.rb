@@ -51,7 +51,7 @@ def thumbs
 
   def last_visit
   if self.visits.count > 0
-    self.visits.find(:first, :order => "visited_on DESC").visited_on.strftime('%B %d')
+    self.visits.first.visited_on.strftime('%B %d')
   else
     'No Visits Yet'
   end

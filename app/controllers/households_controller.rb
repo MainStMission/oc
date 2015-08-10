@@ -1,9 +1,8 @@
 class HouseholdsController < ApplicationController
 
 
-  #respond_to :html, :json
 
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   expose(:households) { Household.includes(:neighbors, :visits).page params[:page] }
   expose(:household, strategy: StrongParametersStrategy)
@@ -12,10 +11,10 @@ class HouseholdsController < ApplicationController
   expose(:visits) { household.visits}
   expose(:visit)
 
+  def new
 
-  #def index
-  #  respond_with households
-  #end
+  end
+
 
 
   def index
@@ -33,7 +32,6 @@ class HouseholdsController < ApplicationController
 
   def print_order
 
-    
   end
 
 
@@ -81,9 +79,6 @@ end
     end
   end
 
-  def household_summary
-    render json: household_summary
-  end
 
 
   def harvest

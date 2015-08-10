@@ -6,6 +6,7 @@ class DonationsController < ApplicationController
   expose(:donation)
   expose(:donations)
 
+
   def create
     if donation.save
       redirect_to :back, notice: 'Thank you for your donation.'

@@ -8,10 +8,10 @@ gem 'rails', '4.2.3'
 gem 'rake', '~> 10.2.2'
 gem 'pg'
 
-gem 'paper_trail', '~> 4.0.0.rc'
+gem 'paper_trail'
 gem 'kaminari'
 gem 'attr_encrypted'
-gem 'rails_admin', :git => 'https://github.com/sferik/rails_admin.git'
+gem 'rails_admin'
 
 # Assets
 
@@ -56,10 +56,12 @@ group :development, :test do
   gem "byebug"
   gem "factory_girl_rails"
   gem "pry-rails"
+  gem "simplecov"
 
   # Test
 
   gem "capybara-webkit", ">= 1.2.0"
+  gem "spring"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"

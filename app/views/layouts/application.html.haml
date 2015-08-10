@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= link_to 'Main Street Mission', '/'
+    %title= link_to 'Open Cupboard', '/'
     /[if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     = stylesheet_link_tag  'application', :media => "all"
@@ -20,7 +20,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{href: "#"} Main St Mission 
+          %a.brand{href: "#"} Open Cupboard
           .nav-collapse
             %ul.nav
               %li.dropdown
@@ -80,5 +80,5 @@
           = msg
     .container.forms
       .row
-        .span12= yield
+        .col-md-12= yield
     = render 'layouts/footer'
