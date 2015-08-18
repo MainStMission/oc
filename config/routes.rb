@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
   match 'time_clock' => 'time_clock#show', via:[:get,:post]
 
-  # devise_for :admin_users
+  devise_for :admin_users
   #
 
 

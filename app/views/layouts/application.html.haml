@@ -75,7 +75,7 @@
                 %li= link_to "Sign Up", new_user_registration_path
     .row
       - flash.each do |name, msg|
-        %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}
+        %div{class: "alert alert-#{name == :notice ? "success" : "error"}"}
           %a.close{"data-dismiss" => "alert"} 
           = msg
     .container.forms

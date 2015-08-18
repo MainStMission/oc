@@ -1,5 +1,5 @@
 #mhead.well.well-large 
-  .span-one-third
+  .col-md-3rd
   %h4 Household Members: #{household.neighbors.count}
   %h5 Total Visits: #{household.visits.count}
   %h5 Last Visit: #{household.last_visit}
@@ -10,7 +10,7 @@
   = link_to  'View Household', household_path(household), class: 'btn btn-mini'
  
 - if household.post_needs
-  .span8
+  .col-md-8
     #reminder.well.well-large
       %h5 #{household.special_needs}
 .row
@@ -28,28 +28,26 @@
             %td= neighbor.name
             %td= neighbor.age
             %td= word_wrap neighbor.notes
-.span11
+.col-md-11
 %p.visit
 = simple_form_for [household, visit], url: household_visit_path do |f|
   #visit-color.well.well-large
     #visit-date
-      = f.input  :visited_on,     :label => 'Date of Visit', default: Date.today, order: [:month, :day],input_html: { class: 'span2' }
-      .br
+      = f.input  :visited_on, label: 'Date of Visit', default: Date.today, order: [:month, :day],input_html: { class: 'span2' }
         = f.association :neighbor, collection: household.neighbors.all, default: 1, validate: { :presence => true }
       .br
-      .span3
-        = f.input  :starch,         :label => false,  collection: ['Beans','Rice','Potatoes'],selected: 'Beans'
-      .span4
-        = f.input  :cereal,         :label => false,  collection: ['Cereal','Grits','Oatmeal']
-      .span3
-        = f.input  :option1,        :label => false,  collection: ['Peanut Butter Jelly', 'Deserts','Baby Fromula'], prompt: 'Options'
-      .span11
-      .br
-      .br
+      .col-md-3
+        = f.input  :starch, label: false,  collection: ['Beans','Rice','Potatoes'],selected: 'Beans'
+      .col-md-4
+        = f.input  :cereal, label: false,  collection: ['Cereal','Grits','Oatmeal']
+      .col-md-3
+        = f.input  :option1, label: false,  collection: ['Peanut Butter Jelly', 'Deserts','Baby Fromula'], prompt: 'Options'
+      .col-md-11
         - if !household.food_alert.blank?
           %h4 Food Restrictions: #{household.food_alert}
-        = f.input  :items_received, prompt:'Items here will show up on the printer order', :label => 'Special Needs',input_html: {rows: 4, class: 'span9' }
-        = f.input  :notes,          :label => 'Notes',input_html: {rows: 4, class: 'span9' }
-        = f.button :submit, :class => 'btn-primary', :label=> 'Save' 
-        
+      .col-md-14
+        = f.input  :items_received, prompt:'Items here will show up on the printer order', label: 'Special Needs',input_html: {rows: 2, class: 'col-md-9' }
+        = f.input  :notes, label: 'Notes'
+        = f.button :submit,class: 'btn-primary', label: 'Save' 
+
 

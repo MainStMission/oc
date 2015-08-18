@@ -29,7 +29,6 @@ RSpec.describe HouseholdsController, type: :controller do
 
   }
 
-
   let(:invalid_attributes) {
     {household_name: ""}
   }
@@ -42,33 +41,36 @@ RSpec.describe HouseholdsController, type: :controller do
   login_user
 
   describe "GET #index" do
-    it "assigns all households as @households" do
-      get :index, {}
-      expect(assigns(:households)).to eq([household])
+    it "exposes households" do
+      neighbor = create(:neighbor)
+      household = create(:household, neighbors: [neighbor])
+      get :index
+      controller.households.should eq([household])
     end
   end
 
   describe "GET #show" do
-    it "assigns the requested household as @household" do
+    it "exposes the requested household as household" do
     neighbor = create(:neighbor)
     household = create(:household, neighbors: [neighbor])
-      get :show, {:id => household.to_param}
-      expect(assigns(household)).to eq(household)
+      get :show, {id: household.to_param}
+      controller.household.should eq(household)
     end
   end
 
   describe "GET #new" do
-    it "assigns a new household as @household" do
+    it "exposes a new household as household" do
       get :new, {}
-      expect(assigns(:household)).to be_a_new(Household)
+      controller.household.should be_a_new(Household)
     end
   end
 
   describe "GET #edit" do
-    it "assigns the requested household as @household" do
-      household = Household.create! valid_attributes
-      get :edit, {:id => household.to_param}
-      expect(assigns(:household)).to eq(household)
+    it "exposes the requested household as household" do
+      neighbor = create(:neighbor)
+      household = create(:household, neighbors: [neighbor])
+      get :edit, {id: household.to_param}
+      controller.household.should eq(household)
     end
   end
 
@@ -76,7 +78,7 @@ RSpec.describe HouseholdsController, type: :controller do
     context "with valid params" do
       it "creates a new Household" do
         expect {
-          post :create, {:household => valid_attributes}
+          post :create, {household: valid_attributes}
         }.to change(Household, :count).by(1)
       end
 
