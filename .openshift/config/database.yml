@@ -5,12 +5,10 @@ development:
   encoding: unicode
   database: db/oc_development
 
-test: &test
+test:
   adapter: postgresql
-  user: tmb
-  password: 
-  encoding: unicode
-  database: db/oc_test
+  database: travis_ci_test
+  username: postgres
 
 production:
   adapter: postgresql
@@ -22,5 +20,3 @@ production:
   min_messages: ERROR
   reconnect: false
 
-cucumber:
-  <<: *test
