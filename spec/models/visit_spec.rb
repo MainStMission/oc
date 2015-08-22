@@ -5,8 +5,8 @@ RSpec.describe Visit, type: :model do
 
 
   context "Associations" do
-    it {should belong_to(:household)}
-    it {should belong_to(:neighbor)}
+    it {is_expected.to belong_to(:household)}
+    it {is_expected.to belong_to(:neighbor)}
   end
 
   it "has a valid factory"  do

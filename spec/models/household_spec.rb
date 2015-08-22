@@ -4,9 +4,9 @@ require 'shoulda/matchers'
 RSpec.describe Household, type: :model do
 
   context "Associations" do
-    it {should have_many(:neighbors)}
-    it {should validate_uniqueness_of(:household_name).with_message('We already have that Household')}
-    it {should have_many(:visits)}
+    it {is_expected.to have_many :neighbors}
+    it {is_expected.to validate_uniqueness_of(:household_name).with_message('We already have that Household')}
+    it {is_expected.to have_many(:visits)}
   end
 
   it "has a household_name" do
