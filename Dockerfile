@@ -1,25 +1,36 @@
-FROM ruby:2.2.2-onbuild
+# Dockerfile
 
-RUN apt-get update -qq && apt-get install -y build-essential
+FROM phusion/passenger-ruby22:0.9.17
+MAINTAINER Ross Fairbanks "ross.fairbanks@gmail.com"
 
-# for postgres
-RUN apt-get install -y libpq-dev
+# Set correct environment variables.
+ENV HOME /root
 
-# for nokogiri
-RUN apt-get install -y libxml2-dev libxslt1-dev
+# Use baseimage-docker's init system.
+CMD ["/sbin/my_init"]
 
-# for capybara-webkit
-RUN apt-get install -y libqt4-webkit libqt4-dev xvfb
+# Expose Nginx HTTP service
+EXPOSE 80
 
-# for a JS runtime
-RUN apt-get install -y nodejs
+# Start Nginx / Passenger
+RUN rm -f /etc/service/nginx/down
 
-ENV APP_HOME /myapp
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+# Remove the default site
+RUN rm /etc/nginx/sites-enabled/default
 
-ADD Gemfile* $APP_HOME/
+# Add the nginx site and config
+ADD nginx.conf /etc/nginx/sites-enabled/webapp.conf
+ADD rails-env.conf /etc/nginx/main.d/rails-env.conf
+
+# Install bundle of gems
+WORKDIR /tmp
+ADD Gemfile /tmp/
+ADD Gemfile.lock /tmp/
 RUN bundle install
 
-ADD . $APP_HOME
+# Add the Rails app
+ADD . /home/app/oc
+RUN chown -R app:app /home/app/oc
 
+# Clean up APT and bundler when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
