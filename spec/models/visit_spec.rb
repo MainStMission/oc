@@ -12,7 +12,7 @@ RSpec.describe Visit, type: :model do
   it "has a valid factory"  do
     neighbor = create(:neighbor)
     household = create(:household, neighbors: [neighbor])
-    visit = create(:visit, household: household, neighbor: neighbor)
+    visit = create(:visit, household: household, neighbor: neighbor, visited_on: "12-02-1994")
     expect(visit).to be_valid
   end
  
