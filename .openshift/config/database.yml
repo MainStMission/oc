@@ -17,10 +17,8 @@ development:
 
 test:
   adapter: postgresql
-  user: postgres
-  password:
-  encoding: unicode
-  database: db/oc_test
+  database: travis_ci_test
+  username: postgres
 
 production:
   <<: *default
