@@ -1,4 +1,4 @@
-#mhead
+#mhead.well.well-large
 = simple_form_for household do |f|
   = f.input :household_name, label: 'Household Name', autofocus: true
   %p You must enter at least one Neighbor for the Household
@@ -67,31 +67,31 @@
             %tr
               = simple_form_for household do |f|
                 %td= f.input :income1,label: false, collection: ['Food Stamps','Disability','Employment','Child Support','Family', 'SSI', 'Social Security', 'Other']
-              %td= f.input :inc_amt1, as: :string, label: false
-              %td= f.input :expense1,label: false, collection: ['Rent','Utilities','Child Support','Car Payment','Mortgage','Credit Card','Probation', 'Other'], selected: 'Rent'
-              %td= f.input :exp_amt1, as: :string, label: false
+                %td= f.input :inc_amt1, as: :string, label: false
+                %td= f.input :expense1,label: false, collection: ['Rent','Utilities','Child Support','Car Payment','Mortgage','Credit Card','Probation', 'Other'], selected: 'Rent'
+                %td= f.input :exp_amt1, as: :string, label: false
               %tr
                 %td= f.input :income2,label: false, collection: ['Food Stamps','Disability','Employment','Child Support','Family', 'SSI', 'Social Security', 'Other']
-              %td= f.input :inc_amt2, as: :string, label: false
-              %td= f.input :expense2,label: false, collection: ['Rent','Utilities','Child Support','Car Payment','Mortgage','Credit Card','Probation', 'Other'],  selected: 'Utilities'
-              %td= f.input :exp_amt2, as: :string, label: false
+                %td= f.input :inc_amt2, as: :string, label: false
+                %td= f.input :expense2,label: false, collection: ['Rent','Utilities','Child Support','Car Payment','Mortgage','Credit Card','Probation', 'Other'],  selected: 'Utilities'
+                %td= f.input :exp_amt2, as: :string, label: false
               %tr
                 %td= f.input :income3,label: false, collection: ['Food Stamps','Disability','Employment','Child Support','Family', 'SSI', 'Other']
-              %td= f.input :inc_amt3, as: :string, label: false
-              %td= f.input :expense3,label: false, collection: ['Rent','Utilities','Child Support','Car Payment','Mortgage','Credit Card','Probation', 'Other']
-              %td= f.input :exp_amt3, as: :string, label: false
+                %td= f.input :inc_amt3, as: :string, label: false
+                %td= f.input :expense3,label: false, collection: ['Rent','Utilities','Child Support','Car Payment','Mortgage','Credit Card','Probation', 'Other']
+                %td= f.input :exp_amt3, as: :string, label: false
               %tr
                 %td= f.input :income4,label: false
-              %td= f.input :inc_amt4, as: :string
-              %td= f.input :expense4,label: false
-              %td= f.input :exp_amt4, as: :string, label: false
+                %td= f.input :inc_amt4, as: :string, label: false
+                %td= f.input :expense4,label: false
+                %td= f.input :exp_amt4, as: :string, label: false
               %tr
                 %td  Total Income
-              %td  #{ household.inc_amt1.to_i + household.inc_amt2.to_i + household.inc_amt3.to_i + household.inc_amt4.to_i}
-              %td  Total Expenses
-              %td  #{ household.exp_amt1.to_i + household.exp_amt2.to_i + household.exp_amt3.to_i + household.exp_amt4.to_i }
+                %td  #{ household.inc_amt1.to_i + household.inc_amt2.to_i + household.inc_amt3.to_i + household.inc_amt4.to_i}
+                %td  Total Expenses
+                %td  #{ household.exp_amt1.to_i + household.exp_amt2.to_i + household.exp_amt3.to_i + household.exp_amt4.to_i }
         .row
-          .span11
+          .col-md-11
             = f.input :money_notes, label: 'Financial Notes'
         .row
       #visits.tab-pane
@@ -109,26 +109,28 @@
         .col-md-5
           = f.input :option1,  label: 'If you attend Church, what Church do you attend?'
         .row
-          .col-md-5
-            = f.input :opt_val1, label: 'Have you recieved help from another Food Pantry?', collection: ['Yes - within 6 months', 'Yes - several years ago', 'No - this is the first time']
+        .col-md-5
+          = f.input :opt_val1, label: 'Have you recieved help from another Food Pantry?', collection: ['Yes - within 6 months', 'Yes - several years ago', 'No - this is the first time']
         .col-md-5
           = f.input :option2, label: 'Do you have any suggestions to help the Mission?'
         .row
-          = f.input :christmas,  label: 'Add to Christmas list', wrapper:  :inline_checkbox
+        = f.input :christmas,  label: 'Add to Christmas list', wrapper:  :inline_checkbox
         = f.input :bool1, label: 'Referred to Rowan Helping Ministries', wrapper:  :inline_checkbox
         = f.input :bool2, label: 'Referred to Cabarrus County', wrapper: :inline_checkbox
-        .row
-          .col-md-4
+        .hr
+        #file-status.well.well-large
+          %h5 Main Street Mission Storage location and file status
+          .col-md-3
             = f.input :s_numb, label: 'Closed file Number:'
-        .col-md-4
-          = f.input :s_box, label: 'Storage Box Number:'
-        .col-md-2
-          = f.input :bool4, label: 'Consent Not Signed'
-        .col-md-2
-          = f.input :bool3, label: 'Completed'
-        .row
-          .actions.submit-visit
-            = f.button :submit, class: 'btn btn-warning'
+          .col-md-3
+            = f.input :s_box, label: 'Storage Box Number:'
+          .col-md-3
+            = f.input :bool4, label: 'Consent Not Signed'
+          .col-md-3
+            = f.input :bool3, label: 'Completed'
+          .row
+  #visit-btn.actions.submit-visit
+    = f.button :submit, class: 'btn btn-warning'
 
 
 

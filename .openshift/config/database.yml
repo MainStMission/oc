@@ -1,22 +1,28 @@
+default: &default
+  adapter: postgresql
+  timeout: 5000
+  database: oc_development
+  pool: 5
+  host: db
+  port: 5432
+  username: postgres
+  password: <%= ENV["DB_ENV_POSTGRES_PASSWORD"] %>
+
 development:
   adapter: postgresql
-  user: tmb
+  user: postgres
   password:
   encoding: unicode
   database: db/oc_development
 
 test:
   adapter: postgresql
-  database: travis_ci_test
-  username: postgres
+  user: tmb
+  password:
+  encoding: unicode
+  database: db/oc_test
 
 production:
-  adapter: postgresql
-  database: <%=ENV['OPENSHIFT_APP_NAME']%>
-  username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
-  password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
-  host: <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
-  port: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>
-  min_messages: ERROR
-  reconnect: false
+  <<: *default
+  database: oc_production
 
