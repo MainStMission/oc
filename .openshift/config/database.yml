@@ -17,7 +17,7 @@ development:
 
 test:
   adapter: postgresql
-  user: tmb
+  user: postgres
   password:
   encoding: unicode
   database: db/oc_test
