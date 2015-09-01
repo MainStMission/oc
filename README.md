@@ -15,11 +15,11 @@ You can read a bit more about the mission and this project in Tom's
 
 ## Open Cupboard Project
 
-The Original Food Pantry application was developed in Ruby and Rails and has been in daily use at Main Street Mission for about One and One half years. We have been very happy with it and want to make it available on an open source basis to other food pantries. The intent of the Open Cupboard Project is create a generic open source version of Food Pantry Manager fthat can be customized and enhanced so it cna be used by other Food Pantries and to accomodate future growth by Main Street Mission. Please feel free to contact us if you would like assistance in either deploying the project or in having it custom tailored to your needs.
+The Original Food Pantry application was developed in Ruby and Rails and has been in daily use at Main Street Mission for about one and one half years. We have been very happy with it and want to make it available on an open source basis to other food pantries. The intent of the Open Cupboard Project is create a generic open source version of Food Pantry Manager fthat can be customized and enhanced for use by other Food Pantries. We also want to accomodate future growth by Main Street Mission as we expand our services. Please feel free to contact us if you would like assistance in either deploying the project or in having it custom tailored to your needs.
 
 ## Why Should You Help?
 
-Mian Street Misison provides food for about 250 families each month. About 200 children are given school supplies each August. The mission also
+Mian Street Mission provides food for about 250 families each month. About 200 children are given school supplies each August. The mission also
 provides meals for families on holidays. This is only one food pantry in the US. In [2011 6.1 million households (5.1%)](http://feedingamerica.org/hunger-in-america/hunger-facts/hunger-and-poverty-statistics.aspx)
 accessed emergency food at a pantry in the US. Contributing to this project gives you an opportunity to help this organization and the people
 it serves as well as other organizations that want to use the platform. Are you trying to learn Ruby on Rails? Great, we would love to help you learn and it gives you an excellent example to add to
@@ -38,6 +38,5 @@ We have a [google group mailing list](https://groups.google.com/forum/?fromgroup
 Feel free to ask us questions there, or report a problem with an issue here on github. If you have a problem with anything not code related,
 then send us a message on the mailing list and we'll do the best we can to help you out.
 
-This App is designed for [Openshift](http://openshift.github.io/documentation/oo_cartridge_guide.html#ruby)
 
 
