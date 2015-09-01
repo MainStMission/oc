@@ -2,10 +2,9 @@
 # [Main St Mission's](http://www.mainstmission.org/) Open Cupboard
 
 [![Build Status](https://travis-ci.org/MainStMission/oc.svg?branch=master)](https://travis-ci.org/MainStMission/oc)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/MainStMission/oc)
 ## Who Are We?
 
-![Main Street Mission](/app/assets/images/msm.jpg)
+![Main Street Mission](/app/assets/images/msm_logo.png)
 Main Street Mission is food pantry in China Grove, North Carolina, USA. The mission provides food and other donated items to
 members of the community in need. This project aims to create an inventory and volunteer tracking system for use in food pantries and
 food banks. There are not any good options for software for the small non-profits that run these pantries. This project will create a
@@ -16,15 +15,15 @@ You can read a bit more about the mission and this project in Tom's
 
 ## Open Cupboard Project
 
-The Original Food Pantry application was developed in Ruby and Rails and has been in daily use at Main Street Mission for about One and One half years. We have been very happy with it and want to make it available on an open source basis to other food pantries. Also please feel free to contact if you would like assistance in either deploying the project or in having it custom tailored to your needs.
+The Original Food Pantry application was developed in Ruby and Rails and has been in daily use at Main Street Mission for about One and One half years. We have been very happy with it and want to make it available on an open source basis to other food pantries. The intent of the Open Cupboard Project is create a generic open source version of Food Pantry Manager fthat can be customized and enhanced so it cna be used by other Food Pantries and to accomodate future growth by Main Street Mission. Please feel free to contact us if you would like assistance in either deploying the project or in having it custom tailored to your needs.
 
 ## Why Should You Help?
 
-The mission provides food for about 250 families each month. About 200 children are given school supplies each August. The mission also
+Mian Street Misison provides food for about 250 families each month. About 200 children are given school supplies each August. The mission also
 provides meals for families on holidays. This is only one food pantry in the US. In [2011 6.1 million households (5.1%)](http://feedingamerica.org/hunger-in-america/hunger-facts/hunger-and-poverty-statistics.aspx)
 accessed emergency food at a pantry in the US. Contributing to this project gives you an opportunity to help this organization and the people
-it serves. Are you trying to learn Ruby on Rails? Great, we would love to help you learn and it gives you an excellent example to add to
-your resume/cv while contributing to a project that helps people.
+it serves as well as other organizations that want to use the platform. Are you trying to learn Ruby on Rails? Great, we would love to help you learn and it gives you an excellent example to add to
+your resume/cv while contributing to a project that helps people. Do you know of a Food Pantry that needs assistance? Great, we can help you get started with Open Cupboard in your organization.  
 
 ## Contributing
 
