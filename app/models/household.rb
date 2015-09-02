@@ -30,7 +30,7 @@ def box
 end
 
 
-def thumbs
+  def thumbs
     if self.bool3
       "<i class='icon-ok'></i>"
     else
@@ -44,30 +44,32 @@ def thumbs
   end
 
 
+  def young_neighbor
+    self.neighbors.young.count
+  end
+
+  def middle_neighbor
+    if self.neighbors.middle
+    self.neighbors.middle.count
+    end 
+  end
+
+  def old_neighbor
+    self.neighbors.old.count
+  end
+
 
   def visit
     self.visits
   end
 
   def last_visit
-  if self.visits.count > 0
-    self.visits.first.visited_on.strftime('%B %d')
-  else
-    'No Visits Yet'
+    if self.visits.count > 0
+      self.visits.first.visited_on.strftime('%B %d')
+    else
+      'No Visits Yet'
+    end
   end
-
- end
-
-# def print_receipt
-#    if @visit?
-#      redirect_to: 
-#   else
-#      redirect_to: households_path
-#   end
-
-
-
-
 end
 
 

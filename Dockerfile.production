@@ -1,0 +1,7 @@
+FROM phusion/passenger-ruby22:0.9.17
+
+RUN rake assets:precompile
+
+ENV RAILS_ENV production
+
+CMD ["rails", "server", "-b", "0.0.0.0"]
