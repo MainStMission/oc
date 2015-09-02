@@ -1,15 +1,15 @@
-web:
-  build: .
-  ports:
-    - "80:80"
-  links:
-    - db
-  volumes:
-    - "/oc:/home/app/oc"
-
 db:
   image: postgres:9.4
   environment:
     - POSTGRES_PASSWORD=asdfasdf
+
+web:
+  build: .
+  ports:
+    - "3000:3000"
+  volumes:
+    - "/oc:/home/app/oc"
+  links:
+    - db
 
 
