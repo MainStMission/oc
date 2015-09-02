@@ -18,6 +18,7 @@ gem 'rails_admin'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
+gem 'by_star', :git => "git://github.com/radar/by_star"
 gem "title"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -56,17 +57,14 @@ group :development, :test do
   gem "byebug"
   gem "factory_girl_rails"
   gem "pry-rails"
-  gem "simplecov"
 
   # Test
 
   # gem "capybara-webkit", ">= 1.2.0"
-  gem "spring"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
   gem "shoulda-matchers", require: false
-  gem "simplecov", require: false
   gem "timecop"
   gem "webmock"
 
